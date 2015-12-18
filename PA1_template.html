@@ -94,10 +94,8 @@ plot(stepsbyint, type=&quot;l&quot;, main=&quot;Average number of steps across 5
 <h3>Imputing missing values</h3>
 <p>There are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.</p>
 <pre class="r"><code>nasteps&lt;-sum(is.na(activity$steps))</code></pre>
-<p>Total number of missing values in the dataset is 2304. We replace these NA values by mean number of steps for respective 5-minute interval across al days. This code creates a new dataset that is equal to the original dataset but with the missing data filled in.</p>
-<pre class="r"><code># We assume every day contains the same number of intervals, and this seems to be true. 
-# Then, we can add a column with mean number of steps by interval to original dataset:
-noNAactivity&lt;-activity
+<p>Total number of missing values in the dataset is 2304. We replace these NA values by mean number of steps for respective 5-minute interval across al days. This code creates a new dataset that is equal to the original dataset but with the missing data filled in. We assume every day contains the same number of intervals, and this seems to be true. Then, we can add a column with mean number of steps by interval to original dataset.</p>
+<pre class="r"><code>noNAactivity&lt;-activity
 noNAactivity$date&lt;-as.Date(noNAactivity$date)
 noNAactivity$meansteps&lt;-round(stepsbyint$steps, 0)
 # This new column will hold a mean value of steps for NA rows, and 0 for the rest of rows:

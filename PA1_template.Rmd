@@ -40,10 +40,8 @@ There are a number of days/intervals where there are missing values (coded as NA
 ``` {r}
 nasteps<-sum(is.na(activity$steps))
 ```
-Total number of missing values in the dataset is `r nasteps`. We replace these NA values by mean number of steps for respective 5-minute interval across al days. This code creates a new dataset that is equal to the original dataset but with the missing data filled in.
+Total number of missing values in the dataset is `r nasteps`. We replace these NA values by mean number of steps for respective 5-minute interval across al days. This code creates a new dataset that is equal to the original dataset but with the missing data filled in. We assume every day contains the same number of intervals, and this seems to be true. Then, we can add a column with mean number of steps by interval to original dataset.
 ```{r}
-# We assume every day contains the same number of intervals, and this seems to be true. 
-# Then, we can add a column with mean number of steps by interval to original dataset:
 noNAactivity<-activity
 noNAactivity$date<-as.Date(noNAactivity$date)
 noNAactivity$meansteps<-round(stepsbyint$steps, 0)
