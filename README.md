@@ -1,4 +1,4 @@
-### Peer Assessment - Coursera Reproducible Research
+### Peer Assessment 1 - Coursera Reproducible Research Course
 This repository contains Peer Assessment 1 files.
 It was created from scratch, not forked from rdpeng repository. The reasons behind that are simple:  
 1. If reviewer forks four forked repositories, she gets a mess.  
